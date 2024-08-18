@@ -10,9 +10,9 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Header from '../../../../components/Header/Header';
-import { ImageProps } from '../page';
-import getImageData from '../page';  
+import { ImageProps } from '../page';  
 import EmblaCarousel from '@/app/components/Carousel/Carousel';
+import { images } from '../../imagesData'; // Importation des données d'images
 
 interface ClientProductPageProps {
     title: string;
@@ -54,11 +54,12 @@ export default function ClientProductPage({ title }: ClientProductPageProps) {
     const [image, setImage] = useState<ImageProps | null>(null);
 
     useEffect(() => {
-        async function fetchData() {
-            const data = await getImageData(title);
-            setImage(data || null);
+        const data = images.find(img => img.title === title);
+        if (data) {
+            setImage(data);
+        } else {
+            console.error("Les données récupérées ne correspondent pas à ImageProps");
         }
-        fetchData();
     }, [title]);
 
     if (!image) {
