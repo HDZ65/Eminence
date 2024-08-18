@@ -18,13 +18,18 @@ export async function generateStaticParams() {
     }));
 }
 
-// Récupérer les données statiques
-export async function getImageData(encodedTitle: string) {
-    const title = decodeURIComponent(encodedTitle); // Décodage des titres
-    return images.find(img => img.title === title);
+// Composant de la page produit
+export default async function ProductPage({ params }: { params: { title: string } }) {
+    const imageData = await getImageData(params.title);
+    if (!imageData) {
+        // Gérer le cas où l'image n'est pas trouvée
+        return <div>Produit non trouvé</div>;
+    }
+    return <ClientProductPage title={imageData.title} />;
 }
 
-// Composant de la page produit
-export default function ProductPage({ params }: { params: { title: string } }) {
-    return <ClientProductPage title={params.title} />;
+// Récupérer les données statiques
+async function getImageData(encodedTitle: string) {
+    const title = decodeURIComponent(encodedTitle); // Décodage des titres
+    return images.find(img => img.title === title);
 }

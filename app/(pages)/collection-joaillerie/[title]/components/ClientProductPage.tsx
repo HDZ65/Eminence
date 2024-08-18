@@ -10,7 +10,8 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Header from '../../../../components/Header/Header';
-import { ImageProps, getImageData } from '../page';
+import { ImageProps } from '../page';
+import getImageData from '../page';  
 import EmblaCarousel from '@/app/components/Carousel/Carousel';
 
 interface ClientProductPageProps {
