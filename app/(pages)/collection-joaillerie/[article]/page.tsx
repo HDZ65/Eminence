@@ -15,11 +15,11 @@ import image10 from '@/public/10.jpg';
 import AddToCartWrapper from './components/AddToCartWrapper';
 
 export default function ArticlePage({ params }: { params: { article: string } }) {
-    const decodedTitle = decodeURIComponent(params.article.replace(/%22/g, '"'));
+    const decodedTitle = decodeURIComponent(params.article);
     console.log("Paramètre article décodé:", decodedTitle);
 
     const article = articles.find(article => {
-        const encodedTitle = encodeURIComponent(article.title.replace(/\s+/g, '-').replace(/"/g, '%22'));
+        const encodedTitle = encodeURIComponent(article.title.replace(/\s+/g, '-'));
         console.log("Comparaison des titres:", encodedTitle, params.article);
         return encodedTitle === params.article;
     });
@@ -117,6 +117,6 @@ export default function ArticlePage({ params }: { params: { article: string } })
 
 export async function generateStaticParams() {
     return articles.map((article) => ({
-        article: encodeURIComponent(article.title.replace(/\s+/g, '-').replace(/"/g, '%22')),
+        article: encodeURIComponent(article.title.replace(/\s+/g, '-')),
     }));
 }
