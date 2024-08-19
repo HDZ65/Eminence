@@ -26,7 +26,7 @@ export default function ArticlePage({ params }: { params: { article: string } })
 
     if (!article) {
         console.log("Article non trouvé pour le paramètre:", params.article);
-        return <p className='flex justify-center items-center w-full h-screen text-4xl font-bold text-center '>Article non trouvé</p>;
+        return <p className='flex justify-center items-center w-full h-screen text-4xl font-bold text-center '>Article non trouvé {`"Comparaison des titres:", ${decodedTitle}, ${params.article}`}</p>;
     }
 
     console.log("Article trouvé:", article);
