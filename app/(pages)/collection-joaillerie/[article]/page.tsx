@@ -16,7 +16,20 @@ import AddToCartWrapper from './components/AddToCartWrapper';
 
 export default function ArticlePage({ params }: { params: { article: string } }) {
     const decodedTitle = decodeURIComponent(params.article.replace(/%22/g, '"'));
-    const article = articles.find(article => encodeURIComponent(article.title.replace(/\s+/g, '-').replace(/"/g, '%22')) === params.article);
+    console.log("Paramètre article décodé:", decodedTitle);
+
+    const article = articles.find(article => {
+        const encodedTitle = encodeURIComponent(article.title.replace(/\s+/g, '-').replace(/"/g, '%22'));
+        console.log("Comparaison des titres:", encodedTitle, params.article);
+        return encodedTitle === params.article;
+    });
+
+    if (!article) {
+        console.log("Article non trouvé pour le paramètre:", params.article);
+        return <p className='flex justify-center items-center w-full h-screen text-4xl font-bold text-center '>Article non trouvé</p>;
+    }
+
+    console.log("Article trouvé:", article);
 
     const slides = [
         {
@@ -50,10 +63,6 @@ export default function ArticlePage({ params }: { params: { article: string } })
             link: "/",
         },
     ];
-
-    if (!article) {
-        return <p className='flex justify-center items-center w-full h-screen text-4xl font-bold text-center '>Article non trouvé</p>;
-    }
 
     return (
         <>
