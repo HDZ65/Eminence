@@ -24,7 +24,7 @@ export default function ArticlePage({ params }: { params: { article: string } })
     if (!article) {
         return (
             <div className='flex flex-col justify-center items-center w-full h-screen text-4xl font-bold text-center'>
-                <p>Article non trouvé</p>
+                <p>Mince, cet article n&apos;existe pas</p>
                 <p>{`"Comparaison des titres:", ${decodedTitle}, ${params.article}`}</p>
             </div>
         );
