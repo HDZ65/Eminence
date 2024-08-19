@@ -46,6 +46,8 @@ export default function Home() {
     },
   ];
 
+  
+
   return (
     <div>
       <Header />
@@ -79,7 +81,7 @@ export default function Home() {
             <h2 className="text-7xl font-semibold font-valkyrie -mt-6 text-gray-800">Éminence</h2>
           </div>
           <div className="flex flex-col justify-start gap-6 w-full md:w-1/2">
-            <p className="text-lg indent-8">Bienvenue chez Éminence, la maison de joaillerie où chaque création est une œuvre d&apos;art destinée aux femmes audacieuses et raffinées. <br />
+            <p className="text-lg">Bienvenue chez Éminence, la maison de joaillerie où chaque création est une œuvre d&apos;art destinée aux femmes audacieuses et raffinées. <br />
               Nos bijoux, conçus avec des matériaux précieux et des designs exclusifs, incarnent l&apos;élégance et le caractère. Chaque pièce est une déclaration de style, une affirmation de votre personnalité unique, et une invitation à briller avec une sophistication inégalée. <br />
               Découvrez l&apos;essence du luxe avec Éminence, où tradition et innovation se rencontrent pour sublimer votre beauté.</p>
             <Link className="border border-black px-6 py-2 w-full text-center md:w-fit hover:bg-gray-800 hover:text-white transition-colors duration-500 text-lg" href="/">Explorer la maison Éminence</Link>

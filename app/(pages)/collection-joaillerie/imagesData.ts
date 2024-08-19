@@ -13,7 +13,7 @@ import image15 from '/public/15.jpg';
 import image16 from '/public/16.jpg';
 import image17 from '/public/17.jpg';
 
-export const images = [
+export const articles = [
     { src: image8, alt: "Collier or rose et diamants", className: "w-full h-full object-cover col-span-2", title: "Collier or rose et diamants", price: "€ 8.500" },
     { src: image4, alt: "Parure Audacieuse", className: "w-full h-full object-cover col-span-2", title: "Parure Audacieuse", price: "€ 3.200" },
     { src: image5, alt: "Boucle d'oreille", className: "w-full h-full object-cover", title: "Boucle d'oreille", price: "€ 800" },
