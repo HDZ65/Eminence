@@ -52,7 +52,7 @@ export default function ArticlePage({ params }: { params: { article: string } })
     ];
 
     if (!article) {
-        return <p>Article non trouvé</p>;
+        return <p className='flex justify-center items-center w-full h-screen text-4xl font-bold text-center '>Article non trouvé</p>;
     }
 
     return (
