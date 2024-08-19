@@ -16,7 +16,7 @@ import AddToCartWrapper from './components/AddToCartWrapper';
 
 export default function ArticlePage({ params }: { params: { article: string } }) {
     const decodedTitle = decodeURIComponent(params.article);
-    const article = articles.find(article => article.title.replace(/\s+/g, '-') === decodedTitle);
+    const article = articles.find(article => encodeURIComponent(article.title.replace(/\s+/g, '-')) === params.article);
 
     const slides = [
         {
