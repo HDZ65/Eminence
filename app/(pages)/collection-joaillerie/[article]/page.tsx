@@ -15,8 +15,8 @@ import image10 from '@/public/10.jpg';
 import AddToCartWrapper from './components/AddToCartWrapper';
 
 export default function ArticlePage({ params }: { params: { article: string } }) {
-    const decodedTitle = decodeURIComponent(params.article);
-    const article = articles.find(article => encodeURIComponent(article.title.replace(/\s+/g, '-')) === params.article);
+    const decodedTitle = decodeURIComponent(params.article.replace(/%22/g, '"'));
+    const article = articles.find(article => encodeURIComponent(article.title.replace(/\s+/g, '-').replace(/"/g, '%22')) === params.article);
 
     const slides = [
         {
@@ -108,6 +108,6 @@ export default function ArticlePage({ params }: { params: { article: string } })
 
 export async function generateStaticParams() {
     return articles.map((article) => ({
-        article: encodeURIComponent(article.title.replace(/\s+/g, '-')),
+        article: encodeURIComponent(article.title.replace(/\s+/g, '-').replace(/"/g, '%22')),
     }));
 }
