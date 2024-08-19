@@ -15,7 +15,8 @@ import image10 from '@/public/10.jpg';
 import AddToCartWrapper from './components/AddToCartWrapper';
 
 export default function ArticlePage({ params }: { params: { article: string } }) {
-    const decodedTitle = decodeURIComponent(params.article);
+    // Décodage double pour gérer le double encodage potentiel
+    const decodedTitle = decodeURIComponent(decodeURIComponent(params.article));
     const article = articles.find(article => {
         const encodedTitle = encodeURIComponent(article.title.replace(/\s+/g, '-'));
         return encodedTitle === params.article;
@@ -116,6 +117,6 @@ export default function ArticlePage({ params }: { params: { article: string } })
 
 export async function generateStaticParams() {
     return articles.map((article) => ({
-        article: encodeURIComponent(article.title.replace(/\s+/g, '-')),
+        article: encodeURIComponent(article.title.replace(/\s+/g, '-').replace(/"/g, '%22')),
     }));
 }
