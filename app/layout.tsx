@@ -18,7 +18,7 @@ export default function RootLayout({
       <SessionWrapper>
         <body className="flex flex-col min-h-screen">
           <Header />
-          <main className="flex-grow container flex flex-col gap-24 md:gap-32 mx-auto px-4 md:px-6 lg:px-20  py-16 md:py-20">
+          <main className="flex-grow container flex flex-col gap-16 md:gap-32 mx-auto px-4 md:px-6 lg:px-20  py-16 md:py-20">
             {children}
           </main>
           <Footer />
