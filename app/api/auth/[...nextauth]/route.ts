@@ -13,4 +13,4 @@ const handler = NextAuth(authOptions)
  * Exportation des gestionnaires GET et POST
  * @description Next.js 13+ requiert l'exportation explicite des méthodes HTTP
  */
-export { handler as GET, handler as POST }
+export { handler as GET, handler as POST } 
