@@ -11,6 +11,7 @@ import image10 from './../public/10.jpg';
 import React from 'react';
 import Link from "next/link";
 import EmblaCarousel from "./components/Carousel/Carousel";
+import Footer from "./components/Footer/Footer";
 
 export default function Home() {
   const slides = [
@@ -46,14 +47,12 @@ export default function Home() {
     },
   ];
 
-  
+
 
   return (
-    <div>
-      <Header />
-      <main className="container flex flex-col gap-12 md:gap-16 lg:gap-20 mx-auto px-4 md:px-6 lg:px-20  py-12 md:py-20">
-        <Video />
-        <section className="flex flex-col md:flex-row gap-12  lg:gap-16">
+    <>
+      <Video />
+      <section className="flex flex-col md:flex-row gap-12  lg:gap-16">
           <div className="flex flex-col gap-6 w-full md:w-4/6 ">
             <Image className="w-full h-[20rem] md:h-[25rem] lg:h-[35rem] object-cover" src={image3} alt="Image 3" priority width={1000} height={1000} />
             <p className="text-xs">Boucle d&apos;oreille en or 18 carats</p>
@@ -84,18 +83,9 @@ export default function Home() {
             <p className="text-lg">Bienvenue chez Éminence, la maison de joaillerie où chaque création est une œuvre d&apos;art destinée aux femmes audacieuses et raffinées. <br />
               Nos bijoux, conçus avec des matériaux précieux et des designs exclusifs, incarnent l&apos;élégance et le caractère. Chaque pièce est une déclaration de style, une affirmation de votre personnalité unique, et une invitation à briller avec une sophistication inégalée. <br />
               Découvrez l&apos;essence du luxe avec Éminence, où tradition et innovation se rencontrent pour sublimer votre beauté.</p>
-            <Link className="border border-black px-6 py-2 w-full text-center md:w-fit hover:bg-gray-800 hover:text-white transition-colors duration-500 text-lg" href="/">Explorer la maison Éminence</Link>
+            <Link className="border border-black px-6 py-2 w-full text-center md:w-fit hover:bg-gray-800 hover:text-white transition-colors duration-500 text-lg" href="/la-maison-eminence">Explorer la maison Éminence</Link>
           </div>
-
         </section>
-
-      </main>
-      <footer className="bg-gray-800 text-white py-4">
-        <div className="container mx-auto text-center">
-          <p>&copy; 2024 Éminence. Tous droits réservés.</p>
-          <p>Développé par <Link className="underline" href="https://www.linkedin.com/in/alexandre-hernandez-392603309/">Alexandre Hernandez</Link></p>
-        </div>
-      </footer>
-    </div>
+      </>
   );
 }

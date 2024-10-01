@@ -5,13 +5,13 @@ import Header from "../../components/Header/Header";
 import React from 'react';
 import Link from "next/link";
 import { articles } from "./imagesData";
+import Footer from "@/app/components/Footer/Footer";
 
 export default function CollectionJoaillerie() {
     return (
         <>
-            <Header />
-            <main className="container flex flex-col gap-12 md:gap-16 lg:gap-20 mx-auto px-4 md:px-6 lg:px-20 py-12 md:py-20">
-                <section className="flex flex-col md:flex-row gap-12 lg:gap-16">
+                <section className="flex flex-col justify-start items-start gap-6">
+                    <h1 className="text-4xl text-center">Collection joaillerie</h1>
                     <p className="w-full md:w-1/2 text-xl" aria-label="Description de la collection de joaillerie">&quot;La maison Éminence présente sa collection de joaillerie réalisée en or. La collection s&apos;appuie sur des pratiques durable qui caratérisent le luxe moderne, utilisant des techniques ancestrales et des matériaux nobles.&quot;</p>
                 </section>
 
@@ -32,13 +32,6 @@ export default function CollectionJoaillerie() {
                 </section>
 
                 <p className="text-center text-lg border-b border-black py-8"><Link className="border-b border-black" href="/">Éminence</Link> / Collection joaillerie</p>
-            </main>
-            <footer className="bg-gray-800 text-white py-4">
-                <div className="container mx-auto text-center">
-                    <p>&copy; 2024 Éminence. Tous droits réservés.</p>
-                    <p>Développé par <Link className="underline" href="https://www.linkedin.com/in/alexandre-hernandez-392603309/">Alexandre Hernandez</Link></p>
-                </div>
-            </footer>
         </>
     );
 }

@@ -15,7 +15,6 @@ import image10 from '@/public/10.jpg';
 import AddToCartWrapper from './components/AddToCartWrapper';
 
 export default function ArticlePage({ params }: { params: { article: string } }) {
-    // Décodage double pour gérer le double encodage potentiel
     const decodedTitle = decodeURIComponent(decodeURIComponent(params.article));
     const article = articles.find(article => {
         const encodedTitle = encodeURIComponent(article.title.replace(/\s+/g, '-'));
